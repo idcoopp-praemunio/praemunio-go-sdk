@@ -1,0 +1,3173 @@
+openapi: 3.1.0
+info:
+  description: ""
+  title: API REFERENCE
+  version: 1.0.0
+servers:
+- url: /
+security:
+- bearer: []
+paths:
+  /auth/auth-token:
+    post:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              publicKey: pk_test_xxx
+              secretKey: sk_test_xxx
+            schema:
+              $ref: "#/components/schemas/_auth_auth_token_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                "1":
+                  summary: OK
+                  value:
+                    success: true
+                    message: Authentication successful
+                    result:
+                      access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXJJZCI6OCwiYWNjb3VudEVtYWlsIjoiYm9uYXZqc0BnbWFpbC5jb20iLCJhY2NvdW50TmFtZSI6Illhd28gQm9ibyBUU0FMSSIsImFjY291bnRJZCI6NywiYXBpS2V5SWQiOjEsInB1YmxpY0tleSI6InBrX3Rlc3RfYTAwZTQ2NmQxMDE3MDk0NWMxODM3YjVkMjA1YmI1YWUiLCJzY29wZXMiOlsiZG9jdW1lbnQ6cmVhZCIsImRvY3VtZW50OmRlbGV0ZSIsImZvbGRlcjp3cml0ZSIsIndvcmtzcGFjZTpyZWFkIiwic2hhcmU6cmVhZCIsInVzYWdlOnJlYWQiLCJ0ZWFtOnJlYWQiLCJkb2N1bWVudDp3cml0ZSIsImZvbGRlcjpyZWFkIiwiZm9sZGVyOmRlbGV0ZSIsIndvcmtzcGFjZTp3cml0ZSIsInRlYW06d3JpdGUiLCJzaGFyZTp3cml0ZSIsImFwaV9rZXk6cmVhZCIsIndlYmhvb2s6cmVhZCIsImFwaV9rZXk6d3JpdGUiLCJ3ZWJob29rOndyaXRlIl0sImVudmlyb25tZW50IjoiZGV2ZWxvcG1lbnQiLCJyYXRlTGltaXQiOjEwMDAsImRhaWx5UmVxdWVzdExpbWl0IjoxMDAwMCwiYWxsb3dlZE9yaWdpbnMiOltdLCJpYXQiOjE3Nzg4MDM5ODIsImV4cCI6MTc3ODg4OTk4MiwiYXVkIjoicHJhZW11bmlvLWFwaSIsImlzcyI6InByYWVtdW5pby1hcGkifQ.f7SADmd5nBdMwOlI2bQAUP6yLm7ONtEyipPtYptuTK4
+                      expires_in: 86000
+                    statusCode: 200
+                "2":
+                  summary: Success
+                  value:
+                    success: true
+                    message: Authentication successful
+                    result:
+                      access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXJJZCI6OCwiYWNjb3VudEVtYWlsIjoiYm9uYXZqc0BnbWFpbC5jb20iLCJhY2NvdW50TmFtZSI6Illhd28gQm9ibyBUU0FMSSIsImFjY291bnRJZCI6NywiYXBpS2V5SWQiOjEsInB1YmxpY0tleSI6InBrX3Rlc3RfYTAwZTQ2NmQxMDE3MDk0NWMxODM3YjVkMjA1YmI1YWUiLCJzY29wZXMiOlsiZG9jdW1lbnQ6cmVhZCIsImRvY3VtZW50OmRlbGV0ZSIsImZvbGRlcjp3cml0ZSIsIndvcmtzcGFjZTpyZWFkIiwic2hhcmU6cmVhZCIsInVzYWdlOnJlYWQiLCJ0ZWFtOnJlYWQiLCJkb2N1bWVudDp3cml0ZSIsImZvbGRlcjpyZWFkIiwiZm9sZGVyOmRlbGV0ZSIsIndvcmtzcGFjZTp3cml0ZSIsInRlYW06d3JpdGUiLCJzaGFyZTp3cml0ZSIsImFwaV9rZXk6cmVhZCIsIndlYmhvb2s6cmVhZCIsImFwaV9rZXk6d3JpdGUiLCJ3ZWJob29rOndyaXRlIl0sImVudmlyb25tZW50IjoiZGV2ZWxvcG1lbnQiLCJyYXRlTGltaXQiOjEwMDAsImRhaWx5UmVxdWVzdExpbWl0IjoxMDAwMCwiYWxsb3dlZE9yaWdpbnMiOltdLCJpYXQiOjE3Nzg4MDQwOTksImV4cCI6MTc3ODg5MDA5OSwiYXVkIjoicHJhZW11bmlvLWFwaSIsImlzcyI6InByYWVtdW5pby1hcGkifQ.BGhEVqk1yJu23zS8z9PKz-idjfadoOu2xiwnue3Li8k
+                      expires_in: 86000
+                    statusCode: 200
+                "3":
+                  summary: API Authentification
+                  value:
+                    success: true
+                    message: Authentication successful
+                    result:
+                      access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXJJZCI6OCwiYWNjb3VudEVtYWlsIjoiYm9uYXZqc0BnbWFpbC5jb20iLCJhY2NvdW50TmFtZSI6Illhd28gQm9ibyBUU0FMSSIsImFjY291bnRJZCI6NywiYXBpS2V5SWQiOjMsInB1YmxpY0tleSI6InBrX3Rlc3RfZThjMTA1OTkxNTE1YzljOTgwYjZhNDc4ZjY1YWQ0NDEiLCJzY29wZXMiOlsiZG9jdW1lbnRzOnJlYWQiLCJkb2N1bWVudHM6d3JpdGUiLCJkb2N1bWVudHM6ZGVsZXRlIiwiZG9jdW1lbnRzOnNoYXJlIiwiZm9sZGVyczpyZWFkIiwiZm9sZGVyczp3cml0ZSIsInZlcnNpb25zOnJlYWQiLCJ2ZXJzaW9uczpyb2xsYmFjayIsIndvcmtzcGFjZXM6cmVhZCIsImFuYWx5dGljczpyZWFkIl0sImVudmlyb25tZW50IjoiZGV2ZWxvcG1lbnQiLCJyYXRlTGltaXQiOjEwMDAsImRhaWx5UmVxdWVzdExpbWl0IjoxMDAwMCwiYWxsb3dlZE9yaWdpbnMiOltdLCJpYXQiOjE3OTUxOTIxNjgsImV4cCI6MTc5NTE5MzA2OCwiYXVkIjoicHJhZW11bmlvLWFwaSIsImlzcyI6InByYWVtdW5pby1hcGkifQ.6Gg6mBKGFHLeFLQgSjTSlCYGHz3Vhh66JzMB9PuB6ZA
+                      refresh_token: sprt_Qgg3XAxTozFKZp9KELSQdoTr2Pn4qI3zlqAfV1rFDMkwk3KWJk7koL8zL_YrR16x
+                      token_type: Bearer
+                      expires_in: 900
+                      refresh_expires_in: 604800
+                    statusCode: 200
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: API KEY Authentification
+      tags: []
+  /teams/members:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example: "1"
+        explode: true
+        in: query
+        name: team_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: ""
+        example: 1
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: number
+        style: form
+      - description: ""
+        example: 10
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          type: number
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Team Members
+      tags: []
+  /teams/members/add:
+    post:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            examples: {}
+            schema:
+              $ref: "#/components/schemas/_teams_members_add_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Add Team Member Copy
+      tags: []
+  /teams:
+    get:
+      deprecated: false
+      description: ""
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                "1":
+                  summary: Unauthorized
+                  value:
+                    success: false
+                    message: Invalid token
+                    result: null
+                    errors: null
+                    except: null
+                "2":
+                  summary: Success
+                  value:
+                    success: true
+                    message: User teams retrieved successfully
+                    result: []
+                    errors: null
+                    except: null
+                    meta:
+                      request_id: a8371965-195e-47de-a7c6-6ed223acc7cd
+                      status_code: 200
+                "3":
+                  summary: Success
+                  value:
+                    success: true
+                    message: User teams retrieved successfully
+                    result:
+                    - publicId: 0f9dfdec-7cce-4ed3-b7d5-672d33b18e8e
+                      ownerAccountId: 7
+                      name: TEAM API DEV
+                      description: Magni cubo condico. Sollers possimus vilitas nemo.
+                        Deduco abbas subvenio totus cohors tantum tenax. Cibus catena
+                        certe stips.
+                      slug: team-api-dev
+                      color: "#2563eb"
+                      isActive: true
+                      type: legal_entity
+                      createdAt: 2026-11-20T18:59:59.000Z
+                      updatedAt: 2026-11-20T18:59:59.000Z
+                      teamMembers:
+                      - publicId: 2fdcf876-24da-48a8-84e9-6e10ebfef177
+                        teamId: 23
+                        accountId: 7
+                        role: admin
+                        roleId: 2
+                        templateId: null
+                        isActive: true
+                        joinedAt: 2026-11-20T18:59:59.000Z
+                        createdAt: 2026-11-20T18:59:59.000Z
+                        updatedAt: 2026-11-20T18:59:59.000Z
+                      workspaces: []
+                      userPermissions: []
+                    - publicId: 64eefb76-8b3a-4f7d-92c0-7f76370d0ec0
+                      ownerAccountId: 7
+                      name: DevTeam
+                      description: La Team Dev
+                      slug: null
+                      color: "#2563eb"
+                      isActive: true
+                      type: legal_entity
+                      createdAt: 2026-09-15T06:44:00.000Z
+                      updatedAt: 2026-09-15T06:44:00.000Z
+                      teamMembers:
+                      - publicId: e8b80693-fc17-49b9-8fc6-19ed5897a820
+                        teamId: 17
+                        accountId: 7
+                        role: admin
+                        roleId: 2
+                        templateId: null
+                        isActive: true
+                        joinedAt: 2026-09-15T06:44:00.000Z
+                        createdAt: 2026-09-15T06:44:00.000Z
+                        updatedAt: 2026-09-15T06:44:00.000Z
+                      workspaces:
+                      - publicId: e8b80693-fc17-49b9-8fc6-19ed5897a820
+                        teamId: 17
+                        name: Project
+                        isPersonal: false
+                        description: null
+                        status: active
+                        storageLimit: "10"
+                        storageUsed: "1830423"
+                        createdAt: 2026-10-24T19:42:30.000Z
+                        updatedAt: 2026-11-02T13:42:27.000Z
+                      userPermissions: []
+                    errors: null
+                    except: null
+                    meta:
+                      request_id: d8936879-1e59-467e-8959-f54e2181ecbc
+                      status_code: 200
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Account Teams
+      tags: []
+  /teams/create:
+    post:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            examples: {}
+            schema:
+              $ref: "#/components/schemas/_teams_create_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                "1":
+                  summary: Unauthorized
+                  value:
+                    success: false
+                    message: Invalid token
+                    result: null
+                    errors: null
+                    except: null
+                "2":
+                  summary: Success
+                  value:
+                    success: true
+                    message: User teams retrieved successfully
+                    result: []
+                    errors: null
+                    except: null
+                    meta:
+                      request_id: a8371965-195e-47de-a7c6-6ed223acc7cd
+                      status_code: 200
+                "3":
+                  summary: Success
+                  value:
+                    success: true
+                    message: Team created successfully
+                    result:
+                      id: 23
+                      publicId: 0f9dfdec-7cce-4ed3-b7d5-672d33b18e8e
+                      name: TEAM API DEV
+                      description: Magni cubo condico. Sollers possimus vilitas nemo.
+                        Deduco abbas subvenio totus cohors tantum tenax. Cibus catena
+                        certe stips.
+                      slug: team-api-dev
+                      color: "#2563eb"
+                      isActive: true
+                      type: legal_entity
+                      createdAt: 2026-11-20T18:59:59.000Z
+                      updatedAt: 2026-11-20T18:59:59.000Z
+                    errors: null
+                    except: null
+                    meta:
+                      request_id: 0023e9ee-e2f2-4a3c-9177-7f2202bedcf1
+                      status_code: 201
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Create Team
+      tags: []
+  /teams/info:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example:
+        - a3f8e9d2-1a4b-4c7e-9f3a-2b8c6d4e1f0a
+        explode: true
+        in: query
+        name: team_id
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+          default: null
+        style: form
+      requestBody:
+        content:
+          application/json:
+            examples: {}
+            schema:
+              properties: {}
+              type: object
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                "1":
+                  summary: Unauthorized
+                  value:
+                    success: false
+                    message: Invalid token
+                    result: null
+                    errors: null
+                    except: null
+                "2":
+                  summary: Success
+                  value:
+                    success: true
+                    message: User teams retrieved successfully
+                    result: []
+                    errors: null
+                    except: null
+                    meta:
+                      request_id: a8371965-195e-47de-a7c6-6ed223acc7cd
+                      status_code: 200
+                "3":
+                  summary: Success
+                  value:
+                    success: true
+                    message: Team retrieved successfully
+                    result:
+                      id: 23
+                      publicId: 0f9dfdec-7cce-4ed3-b7d5-672d33b18e8e
+                      name: TEAM API DEV
+                      description: Magni cubo condico. Sollers possimus vilitas nemo.
+                        Deduco abbas subvenio totus cohors tantum tenax. Cibus catena
+                        certe stips.
+                      slug: team-api-dev
+                      color: "#2563eb"
+                      isActive: true
+                      type: legal_entity
+                      createdAt: 2026-11-20T18:59:59.000Z
+                      updatedAt: 2026-11-20T18:59:59.000Z
+                      teamMembers:
+                      - publicId: 2fdcf876-24da-48a8-84e9-6e10ebfef177
+                        teamId: 23
+                        accountId: 7
+                        role: admin
+                        roleId: 2
+                        templateId: null
+                        isActive: true
+                        joinedAt: 2026-11-20T18:59:59.000Z
+                        createdAt: 2026-11-20T18:59:59.000Z
+                        updatedAt: 2026-11-20T18:59:59.000Z
+                      workspaces: []
+                    errors: null
+                    except: null
+                    meta:
+                      request_id: 88a180bd-839f-48e6-8bac-8616c2a95b64
+                      status_code: 200
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Team Details
+      tags: []
+  /teams/update:
+    put:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            examples: {}
+            schema:
+              $ref: "#/components/schemas/_teams_update_put_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                "1":
+                  summary: Unauthorized
+                  value:
+                    success: false
+                    message: Invalid token
+                    result: null
+                    errors: null
+                    except: null
+                "2":
+                  summary: Success
+                  value:
+                    success: true
+                    message: User teams retrieved successfully
+                    result: []
+                    errors: null
+                    except: null
+                    meta:
+                      request_id: a8371965-195e-47de-a7c6-6ed223acc7cd
+                      status_code: 200
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Update Team Data
+      tags: []
+  /teams/delete:
+    delete:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            examples: {}
+            schema:
+              $ref: "#/components/schemas/_teams_delete_delete_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                "1":
+                  summary: Unauthorized
+                  value:
+                    success: false
+                    message: Invalid token
+                    result: null
+                    errors: null
+                    except: null
+                "2":
+                  summary: Success
+                  value:
+                    success: true
+                    message: User teams retrieved successfully
+                    result: []
+                    errors: null
+                    except: null
+                    meta:
+                      request_id: a8371965-195e-47de-a7c6-6ed223acc7cd
+                      status_code: 200
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Delete Team
+      tags: []
+  /teams/dashboard:
+    get:
+      deprecated: false
+      description: ""
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Team Data
+      tags: []
+  /teams/workspaces:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: team Id
+        example: 64eefb76-8b3a-4f7d-92c0-7f76370d0ec0
+        explode: true
+        in: query
+        name: team_id
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                success: true
+                message: Workspaces found successfully
+                result:
+                - publicId: e8b80693-fc17-49b9-8fc6-19ed5897a820
+                  teamId: 17
+                  name: Project
+                  isPersonal: false
+                  description: null
+                  status: active
+                  storageLimit: "10"
+                  storageUsed: "1830423"
+                  createdAt: 2026-10-24T19:42:30.000Z
+                  updatedAt: 2026-11-02T13:42:27.000Z
+                  folders:
+                  - publicId: 86e87755-cc9b-44ec-adc3-46db4f3ee373
+                    workspaceId: 14
+                    parentId: null
+                    createdBy: 7
+                    name: MASSANOU.COM
+                    description: ""
+                    path: teams/Project/MASSANOU.COM
+                    deletedAt: null
+                    deletedBy: null
+                    createdAt: 2026-10-24T20:05:21.000Z
+                    updatedAt: 2026-10-24T20:05:20.000Z
+                  - publicId: a8e14e7a-a9e8-43b3-9ac0-94ccc488c309
+                    workspaceId: 14
+                    parentId: null
+                    createdBy: 7
+                    name: EduFlex
+                    description: ""
+                    path: teams/Project/EduFlex
+                    deletedAt: null
+                    deletedBy: null
+                    createdAt: 2026-11-02T09:08:42.000Z
+                    updatedAt: 2026-11-02T09:08:42.000Z
+                errors: null
+                except: null
+                meta:
+                  request_id: 76f7fbcd-0cb9-4803-9a8f-fca2ef5e3add
+                  status_code: 200
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Team workspaces
+      tags: []
+  /teams/logs:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: team Id
+        example:
+        - a3f8e9d2-1a4b-4c7e-9f3a-2b8c6d4e1f0a
+        explode: true
+        in: query
+        name: team_id
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+          default: null
+        style: form
+      - description: ""
+        example: "1"
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: ""
+        example: "50"
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                "1":
+                  summary: Success
+                  value:
+                    success: true
+                    message: Logs retrieved successfully
+                    result:
+                      data:
+                      - timestamp: 2026-11-02T13:45:06.000Z
+                        activityType: Audit
+                        details: "preview on document: download.pdf"
+                        ipAddress: null
+                      - timestamp: 2026-11-02T13:45:02.000Z
+                        activityType: Audit
+                        details: "preview on document: download.pdf"
+                        ipAddress: null
+                      - timestamp: 2026-11-02T13:43:14.000Z
+                        activityType: Audit
+                        details: "preview on document: download.pdf"
+                        ipAddress: null
+                      - timestamp: 2026-11-02T13:42:28.000Z
+                        user:
+                          id: 9
+                          publicId: 0db5b8f8-b076-4472-9086-19c706c5fb47
+                          fullName: Ezekiel Yaovi Carlos ATEGUE
+                          username: ezekiel.tvb@gmail.com
+                          email: ezekiel.tvb@gmail.com
+                          phone: null
+                        activityType: Audit
+                        details: "DOCUMENT_CREATE on documents (ID: 18)"
+                      - timestamp: 2026-11-02T13:42:07.000Z
+                        user:
+                          id: 9
+                          publicId: 0db5b8f8-b076-4472-9086-19c706c5fb47
+                          fullName: Ezekiel Yaovi Carlos ATEGUE
+                          username: ezekiel.tvb@gmail.com
+                          email: ezekiel.tvb@gmail.com
+                          phone: null
+                        activityType: Audit
+                        details: "DOCUMENT_CREATE on documents (ID: 17)"
+                      - timestamp: 2026-11-02T13:33:14.000Z
+                        user:
+                          id: 9
+                          publicId: 0db5b8f8-b076-4472-9086-19c706c5fb47
+                          fullName: Ezekiel Yaovi Carlos ATEGUE
+                          username: ezekiel.tvb@gmail.com
+                          email: ezekiel.tvb@gmail.com
+                          phone: null
+                        activityType: Audit
+                        details: "DOCUMENT_CREATE on documents (ID: 15)"
+                      - timestamp: 2026-11-02T09:09:07.000Z
+                        user:
+                          id: 8
+                          publicId: 80327eb2-c726-481b-84fe-a89dcbfbc287
+                          fullName: Yawo Bobo TSALI
+                          username: bonavjs@gmail.com
+                          email: bonavjs@gmail.com
+                          phone: null
+                        activityType: Audit
+                        details: "DOCUMENT_MOVE on documents (ID: 11)"
+                      - timestamp: 2026-11-02T09:07:21.000Z
+                        activityType: Audit
+                        details: "preview on document: upload_bug_fix_instructions.md"
+                        ipAddress: null
+                      - timestamp: 2026-10-31T08:47:55.000Z
+                        activityType: Audit
+                        details: "preview on document: upload_bug_fix_instructions.md"
+                        ipAddress: null
+                      - timestamp: 2026-10-31T08:47:45.000Z
+                        activityType: Audit
+                        details: "preview on document: upload_bug_fix_instructions.md"
+                        ipAddress: null
+                      meta:
+                        total: 12
+                        per_page: 10
+                        current_page: 1
+                        last_page: 2
+                        first_page: 1
+                        total_pages: 2
+                        has_next: true
+                        has_prev: false
+                        from: 1
+                        to: 10
+                    errors: null
+                    except: null
+                    meta:
+                      request_id: 5594ed83-0821-47a4-b0e1-7a2ac1adc0d7
+                      status_code: 200
+                "2":
+                  summary: Success
+                  value:
+                    success: true
+                    message: Logs retrieved successfully
+                    result:
+                      data:
+                      - timestamp: 2026-11-02T13:45:06.000Z
+                        activityType: Audit
+                        details: "preview on document: download.pdf"
+                        ipAddress: null
+                      - timestamp: 2026-11-02T13:45:02.000Z
+                        activityType: Audit
+                        details: "preview on document: download.pdf"
+                        ipAddress: null
+                      - timestamp: 2026-11-02T13:43:14.000Z
+                        activityType: Audit
+                        details: "preview on document: download.pdf"
+                        ipAddress: null
+                      - timestamp: 2026-11-02T13:42:28.000Z
+                        user:
+                          id: 9
+                          publicId: 0db5b8f8-b076-4472-9086-19c706c5fb47
+                          fullName: Ezekiel Yaovi Carlos ATEGUE
+                          username: ezekiel.tvb@gmail.com
+                          email: ezekiel.tvb@gmail.com
+                          phone: null
+                        activityType: Audit
+                        details: "DOCUMENT_CREATE on documents (ID: 18)"
+                      - timestamp: 2026-11-02T13:42:07.000Z
+                        user:
+                          id: 9
+                          publicId: 0db5b8f8-b076-4472-9086-19c706c5fb47
+                          fullName: Ezekiel Yaovi Carlos ATEGUE
+                          username: ezekiel.tvb@gmail.com
+                          email: ezekiel.tvb@gmail.com
+                          phone: null
+                        activityType: Audit
+                        details: "DOCUMENT_CREATE on documents (ID: 17)"
+                      - timestamp: 2026-11-02T13:33:14.000Z
+                        user:
+                          id: 9
+                          publicId: 0db5b8f8-b076-4472-9086-19c706c5fb47
+                          fullName: Ezekiel Yaovi Carlos ATEGUE
+                          username: ezekiel.tvb@gmail.com
+                          email: ezekiel.tvb@gmail.com
+                          phone: null
+                        activityType: Audit
+                        details: "DOCUMENT_CREATE on documents (ID: 15)"
+                      - timestamp: 2026-11-02T09:09:07.000Z
+                        user:
+                          id: 8
+                          publicId: 80327eb2-c726-481b-84fe-a89dcbfbc287
+                          fullName: Yawo Bobo TSALI
+                          username: bonavjs@gmail.com
+                          email: bonavjs@gmail.com
+                          phone: null
+                        activityType: Audit
+                        details: "DOCUMENT_MOVE on documents (ID: 11)"
+                      - timestamp: 2026-11-02T09:07:21.000Z
+                        activityType: Audit
+                        details: "preview on document: upload_bug_fix_instructions.md"
+                        ipAddress: null
+                      - timestamp: 2026-10-31T08:47:55.000Z
+                        activityType: Audit
+                        details: "preview on document: upload_bug_fix_instructions.md"
+                        ipAddress: null
+                      - timestamp: 2026-10-31T08:47:45.000Z
+                        activityType: Audit
+                        details: "preview on document: upload_bug_fix_instructions.md"
+                        ipAddress: null
+                      meta:
+                        total: 12
+                        per_page: 10
+                        current_page: 1
+                        last_page: 2
+                        first_page: 1
+                        total_pages: 2
+                        has_next: true
+                        has_prev: false
+                        from: 1
+                        to: 10
+                    errors: null
+                    except: null
+                    meta:
+                      request_id: 5594ed83-0821-47a4-b0e1-7a2ac1adc0d7
+                      status_code: 200
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Team logs
+      tags: []
+  /workspaces/drive:
+    get:
+      deprecated: false
+      description: ""
+      parameters: []
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                success: true
+                message: Personal workspace found successfully
+                result:
+                  workspace:
+                    id: 11
+                    publicId: a6ae0c7d-c009-4762-b462-710140d559e0
+                    name: Yawo Bobo Drive
+                    isPersonal: true
+                    description: Personal default workspace
+                    status: active
+                    storageLimit: "0"
+                    storageUsed: "417212"
+                    createdAt: 2026-05-08T21:21:05.000Z
+                    updatedAt: 2026-10-01T09:00:02.000Z
+                    team:
+                      id: 15
+                      publicId: c3c059ab-6d52-4506-9e08-b6d756102767
+                      name: Yawo Bobo Team
+                      description: Default Team for the user
+                      slug: null
+                      color: "#2563eb"
+                      isActive: true
+                      type: individual
+                      createdAt: 2026-05-08T21:21:05.000Z
+                      updatedAt: 2026-05-08T21:21:05.000Z
+                  folders:
+                  - {}
+                  documents: []
+                errors: null
+                except: null
+                meta:
+                  request_id: be122a77-7cb4-4133-a1c0-32d1c373e9b3
+                  status_code: 200
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Account Drive
+      tags: []
+  /workspaces:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: team Id
+        example: 64eefb76-8b3a-4f7d-92c0-7f76370d0ec0
+        explode: true
+        in: query
+        name: team_id
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                success: true
+                message: Workspaces found successfully
+                result:
+                - publicId: 5a6fbed6-596d-4b9a-88f0-7907616e73a5
+                  teamId: 17
+                  name: Project
+                  isPersonal: false
+                  description: null
+                  status: active
+                  storageLimit: "10"
+                  storageUsed: "1830423"
+                  createdAt: 2026-10-24T19:42:30.000Z
+                  updatedAt: 2026-11-02T13:42:27.000Z
+                  folders:
+                  - publicId: 605b5f37-ddfc-419f-a150-45191d5fe5d4
+                    workspaceId: 14
+                    parentId: null
+                    createdBy: 7
+                    name: MASSANOU.COM
+                    description: ""
+                    path: teams/Project/MASSANOU.COM
+                    deletedAt: null
+                    deletedBy: null
+                    createdAt: 2026-10-24T20:05:21.000Z
+                    updatedAt: 2026-10-24T20:05:20.000Z
+                  - publicId: 57e74650-733e-4168-918d-91ef7b144bc9
+                    workspaceId: 14
+                    parentId: null
+                    createdBy: 7
+                    name: EduFlex
+                    description: ""
+                    path: teams/Project/EduFlex
+                    deletedAt: null
+                    deletedBy: null
+                    createdAt: 2026-11-02T09:08:42.000Z
+                    updatedAt: 2026-11-02T09:08:42.000Z
+                errors: null
+                except: null
+                meta:
+                  request_id: 6268aa30-adc5-46f9-b40a-4a75628ed478
+                  status_code: 200
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Workspaces By Team
+      tags: []
+  /workspaces/create:
+    post:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              name: SDK
+              description: Abscido venia tepidus vilis ullam uterque terra depereo.
+              teamId: 0f9dfdec-7cce-4ed3-b7d5-672d33b18e8e
+            schema:
+              $ref: "#/components/schemas/_workspaces_create_post_request"
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              example:
+                success: true
+                message: Workspace created successfully
+                result:
+                  id: 18
+                  publicId: 94506d68-6e3b-479f-83d2-5401b779b565
+                  name: SDK
+                  isPersonal: false
+                  description: Abscido venia tepidus vilis ullam uterque terra depereo.
+                  status: active
+                  storageLimit: "0"
+                  storageUsed: "0"
+                  createdAt: 2026-11-20T20:52:10.000Z
+                  updatedAt: 2026-11-20T20:52:10.000Z
+                errors: null
+                except: null
+                meta:
+                  request_id: b9a66cd4-b236-4411-9cb7-3a0176d142f0
+                  status_code: 201
+              schema:
+                $ref: "#/components/schemas/_workspaces_create_post_201_response"
+          description: ""
+      security:
+      - bearer: []
+      summary: Create New Workspace
+      tags: []
+  /workspaces/details:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example: 94506d68-6e3b-479f-83d2-5401b779b565
+        explode: true
+        in: query
+        name: workspace_id
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                success: true
+                message: Workspace found successfully
+                result:
+                  id: 18
+                  publicId: 94506d68-6e3b-479f-83d2-5401b779b565
+                  name: SDK
+                  isPersonal: false
+                  description: Abscido venia tepidus vilis ullam uterque terra depereo.
+                  status: active
+                  storageLimit: "0"
+                  storageUsed: "0"
+                  createdAt: 2026-11-20T20:52:10.000Z
+                  updatedAt: 2026-11-20T20:52:10.000Z
+                  team:
+                    id: 23
+                    publicId: 0f9dfdec-7cce-4ed3-b7d5-672d33b18e8e
+                    name: TEAM API DEV
+                    description: Magni cubo condico. Sollers possimus vilitas nemo.
+                      Deduco abbas subvenio totus cohors tantum tenax. Cibus catena
+                      certe stips.
+                    slug: team-api-dev
+                    color: "#2563eb"
+                    isActive: true
+                    type: legal_entity
+                    createdAt: 2026-11-20T18:59:59.000Z
+                    updatedAt: 2026-11-20T18:59:59.000Z
+                    teamMembers:
+                    - id: 20
+                      publicId: 470112ef-30e5-47fa-a6c4-560901180a87
+                      teamId: 23
+                      accountId: 7
+                      role: admin
+                      roleId: 2
+                      templateId: null
+                      isActive: true
+                      joinedAt: 2026-11-20T18:59:59.000Z
+                      createdAt: 2026-11-20T18:59:59.000Z
+                      updatedAt: 2026-11-20T18:59:59.000Z
+                errors: null
+                except: null
+                meta:
+                  request_id: 7912931b-ce03-4315-8e55-aa0770e23ec8
+                  status_code: 200
+              schema:
+                $ref: "#/components/schemas/_workspaces_details_get_200_response"
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Workspace Details
+      tags: []
+  /workspaces/teams:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example: 0f9dfdec-7cce-4ed3-b7d5-672d33b18e8e
+        explode: true
+        in: query
+        name: team_id
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                success: true
+                message: Workspaces found successfully
+                result:
+                - publicId: 7c291030-5be4-4d1e-a33e-3d7c5a2519f0
+                  teamId: 23
+                  name: SDK
+                  isPersonal: false
+                  description: Abscido venia tepidus vilis ullam uterque terra depereo.
+                  status: active
+                  storageLimit: "0"
+                  storageUsed: "0"
+                  createdAt: 2026-11-20T20:52:10.000Z
+                  updatedAt: 2026-11-20T20:52:10.000Z
+                  folders: []
+                errors: null
+                except: null
+                meta:
+                  request_id: 826a8cf3-5407-4ef8-88a2-d949775d41ee
+                  status_code: 200
+              schema:
+                $ref: "#/components/schemas/_workspaces_teams_get_200_response"
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Team Workspaces
+      tags: []
+  /workspaces/update:
+    put:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              id: 7c291030-5be4-4d1e-a33e-3d7c5a2519f0
+              description: Derideo usus summopere comis adflicto temptatio consectetur.
+                Consequatur deporto terga bene aedificium peccatus vespillo. Esse
+                angelus thesis ara abduco varius agnosco clamo numquam alter. Ubi
+                caritas distinctio tersus facere adulatio vesper. Contego claro vociferor
+                error adulescens nobis eius. Suscipit capillus testimonium. Sunt validus
+                aestivus.
+              status: active
+            schema:
+              $ref: "#/components/schemas/_workspaces_update_put_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                success: true
+                message: Workspace updated successfully
+                result:
+                  id: 18
+                  publicId: 94506d68-6e3b-479f-83d2-5401b779b565
+                  name: SDK
+                  isPersonal: false
+                  description: Derideo usus summopere comis adflicto temptatio consectetur.
+                    Consequatur deporto terga bene aedificium peccatus vespillo. Esse
+                    angelus thesis ara abduco varius agnosco clamo numquam alter.
+                    Ubi caritas distinctio tersus facere adulatio vesper. Contego
+                    claro vociferor error adulescens nobis eius. Suscipit capillus
+                    testimonium. Sunt validus aestivus.
+                  status: active
+                  storageLimit: "0"
+                  storageUsed: "0"
+                  createdAt: 2026-11-20T20:52:10.000Z
+                  updatedAt: 2026-11-20T21:26:38.000Z
+                  team:
+                    id: 23
+                    publicId: 0f9dfdec-7cce-4ed3-b7d5-672d33b18e8e
+                    name: TEAM API DEV
+                    description: Magni cubo condico. Sollers possimus vilitas nemo.
+                      Deduco abbas subvenio totus cohors tantum tenax. Cibus catena
+                      certe stips.
+                    slug: team-api-dev
+                    color: "#2563eb"
+                    isActive: true
+                    type: legal_entity
+                    createdAt: 2026-11-20T18:59:59.000Z
+                    updatedAt: 2026-11-20T18:59:59.000Z
+                    teamMembers:
+                    - id: 20
+                      publicId: 470112ef-30e5-47fa-a6c4-560901180a87
+                      teamId: 23
+                      accountId: 7
+                      role: admin
+                      roleId: 2
+                      templateId: null
+                      isActive: true
+                      joinedAt: 2026-11-20T18:59:59.000Z
+                      createdAt: 2026-11-20T18:59:59.000Z
+                      updatedAt: 2026-11-20T18:59:59.000Z
+                      deletedAt: null
+                      deletedBy: null
+                      deletedReason: null
+                errors: null
+                except: null
+                meta:
+                  request_id: 3321dc1a-4bff-4b87-96ae-70b7c2bd5cc5
+                  status_code: 200
+              schema:
+                $ref: "#/components/schemas/_workspaces_update_put_200_response"
+          description: ""
+      security:
+      - bearer: []
+      summary: Update workspace
+      tags: []
+  /workspaces/delete:
+    delete:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              workspace_id: e87824d8-fab0-44a1-b678-5630c961cf54
+            schema:
+              $ref: "#/components/schemas/_workspaces_delete_delete_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Delete workspace
+      tags: []
+  /folders:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example: 94506d68-6e3b-479f-83d2-5401b779b565
+        explode: true
+        in: query
+        name: workspace_id
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                success: true
+                message: Workspace folders retrieved successfully
+                result:
+                - publicId: 7935763f-dac9-4bfe-be30-ff7dc0124f16
+                  workspaceId: 18
+                  parentId: null
+                  createdBy: 8
+                  name: API TEST
+                  description: Cimentarius agnitio vilis villa. Cedo vere quae thymbra.
+                  path: teams/SDK/API TEST
+                  deletedAt: null
+                  deletedBy: null
+                  createdAt: 2026-11-20T21:28:43.000Z
+                  updatedAt: 2026-11-20T21:28:42.000Z
+                  parent: null
+                  children: []
+                errors: null
+                except: null
+                meta:
+                  request_id: 485a4dcf-7681-496f-952c-347bfba3a0cd
+                  status_code: 200
+              schema:
+                $ref: "#/components/schemas/_folders_get_200_response"
+          description: ""
+      security:
+      - bearer: []
+      summary: 'Get Folders '
+      tags: []
+  /folders/create:
+    post:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              workspaceId: 94506d68-6e3b-479f-83d2-5401b779b565
+              name: API TEST
+              description: Cimentarius agnitio vilis villa. Cedo vere quae thymbra.
+              parentFolderId: null
+            schema:
+              $ref: "#/components/schemas/_folders_create_post_request"
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              example:
+                success: true
+                message: Folder created successfully
+                result:
+                  id: 11
+                  publicId: 7935763f-dac9-4bfe-be30-ff7dc0124f16
+                  parentId: null
+                  name: API TEST
+                  description: Cimentarius agnitio vilis villa. Cedo vere quae thymbra.
+                  path: teams/SDK/API TEST
+                  deletedAt: null
+                  deletedBy: null
+                  createdAt: 2026-11-20T21:28:43.000Z
+                  updatedAt: 2026-11-20T21:28:42.000Z
+                errors: null
+                except: null
+                meta:
+                  request_id: cef54932-775c-4ac3-a7fd-bb64970b64a7
+                  status_code: 201
+              schema:
+                $ref: "#/components/schemas/_folders_create_post_201_response"
+          description: ""
+      security:
+      - bearer: []
+      summary: Create Folder
+      tags: []
+  /folders/details:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example: 7935763f-dac9-4bfe-be30-ff7dc0124f16
+        explode: true
+        in: query
+        name: folder_id
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                success: true
+                message: Folder retrieved successfully
+                result:
+                  id: 11
+                  publicId: 7935763f-dac9-4bfe-be30-ff7dc0124f16
+                  parentId: null
+                  name: API TEST
+                  description: Cimentarius agnitio vilis villa. Cedo vere quae thymbra.
+                  path: teams/SDK/API TEST
+                  deletedAt: null
+                  deletedBy: null
+                  createdAt: 2026-11-20T21:28:43.000Z
+                  updatedAt: 2026-11-20T21:28:42.000Z
+                  workspace:
+                    id: 18
+                    publicId: 94506d68-6e3b-479f-83d2-5401b779b565
+                    name: SDK
+                    isPersonal: false
+                    description: Derideo usus summopere comis adflicto temptatio consectetur.
+                      Consequatur deporto terga bene aedificium peccatus vespillo.
+                      Esse angelus thesis ara abduco varius agnosco clamo numquam
+                      alter. Ubi caritas distinctio tersus facere adulatio vesper.
+                      Contego claro vociferor error adulescens nobis eius. Suscipit
+                      capillus testimonium. Sunt validus aestivus.
+                    status: active
+                    storageLimit: "0"
+                    storageUsed: "0"
+                    createdAt: 2026-11-20T20:52:10.000Z
+                    updatedAt: 2026-11-20T21:26:38.000Z
+                    team:
+                      id: 23
+                      publicId: 0f9dfdec-7cce-4ed3-b7d5-672d33b18e8e
+                      name: TEAM API DEV
+                      description: Magni cubo condico. Sollers possimus vilitas nemo.
+                        Deduco abbas subvenio totus cohors tantum tenax. Cibus catena
+                        certe stips.
+                      slug: team-api-dev
+                      color: "#2563eb"
+                      isActive: true
+                      type: legal_entity
+                      createdAt: 2026-11-20T18:59:59.000Z
+                      updatedAt: 2026-11-20T18:59:59.000Z
+                  parent: null
+                errors: null
+                except: null
+                meta:
+                  request_id: 46797953-967d-415a-905b-4c9c91caace8
+                  status_code: 200
+              schema:
+                $ref: "#/components/schemas/_folders_details_get_200_response"
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Folder Details
+      tags: []
+  /folders/content:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example:
+        - 7935763f-dac9-4bfe-be30-ff7dc0124f16
+        explode: true
+        in: query
+        name: folder_id
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+          default: null
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_folders_content_get_200_response"
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Folder Content
+      tags: []
+  /folders/update:
+    put:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              id: 046df82d-97a5-47ec-8f52-4e717066b1ed
+              name: delectatio
+              description: Tutis patria constans deficio. Villa soleo sponte sollers
+                toties crudelis tempore capillus concido. Conventus aequus autem vester.
+            schema:
+              $ref: "#/components/schemas/_folders_update_put_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Update Folder
+      tags: []
+  /folders/delete:
+    delete:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              id: 3dabdd39-0564-474f-a30e-6803d1c6ac80
+            schema:
+              $ref: "#/components/schemas/_folders_delete_delete_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Delete Folder
+      tags: []
+  /folders/move:
+    post:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              id: 3dabdd39-0564-474f-a30e-6803d1c6ac80
+            schema:
+              $ref: "#/components/schemas/_folders_delete_delete_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Move Folder
+      tags: []
+  /documents/details:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example: a3f8e9d2-1a4b-4c7e-9f3a-2b8c6d4e1f0a
+        explode: true
+        in: query
+        name: document_id
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Document Info
+      tags: []
+  /documents:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example: 94506d68-6e3b-479f-83d2-5401b779b565
+        explode: true
+        in: query
+        name: workspace_id
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Get Document By Workspace
+      tags: []
+  /documents/update:
+    put:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              id: c8eec57a-9922-4a7e-87b4-c278adf5210e
+              name: coma
+              description: Ullus victoria circumvenio taceo cuppedia. Corpus decretum
+                abundans aeternus cinis contigo quidem certe. Coma vilis corrigo claro
+                vobis triumphus.
+              folderId: "56"
+            schema:
+              $ref: "#/components/schemas/_documents_update_put_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Update Document
+      tags: []
+  /documents/delete:
+    delete:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              id: 2ad9169b-50f7-4f56-84cb-8c38fa821020
+            schema:
+              $ref: "#/components/schemas/_documents_delete_delete_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Delete Document
+      tags: []
+  /documents/archive:
+    post:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              documentId: d77cf229-1515-48d8-bb02-387ccc52b707
+              reason: |-
+                Avarus desipio iure. Arbor speciosus alter conor earum antepono. Suffoco vicinus tenax adsuesco quasi astrum denuo ustilo.
+                Commodi depulso triumphus tametsi angulus tutis suasoria pectus saepe error. Substantia certe id vilicus verus. Aetas sequi talus viriliter copiose tolero suggero odit.
+                Atavus explicabo patior possimus vado aureus conduco templum. Bellicus vos virga pauci trepide conscendo casso voro statua unde. Soluta tunc cado vespillo vivo colo vinco absum triduana.
+            schema:
+              $ref: "#/components/schemas/_documents_archive_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Archive Document
+      tags: []
+  /documents/restore:
+    post:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              documentId: a333812e-1359-422d-adf2-76d82bbb3948
+            schema:
+              $ref: "#/components/schemas/_documents_restore_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: 'Restore Document '
+      tags: []
+  /documents/move:
+    post:
+      deprecated: false
+      description: ""
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            example:
+              documentId: 1f81517f-ec7b-45cf-bab6-c6b6bc245ddd
+              folderId: 731a34c8-67b4-4fa4-ae44-594c9124f322
+              workspaceId: ad9f8f61-fed8-4f2e-a8d4-2c5e3ff3bcf6
+            schema:
+              $ref: "#/components/schemas/_documents_move_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Move Document
+      tags: []
+  /documents/stream:
+    get:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example: 731a34c8-67b4-4fa4-ae44-594c9124f322
+        explode: true
+        in: query
+        name: document_id
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            example:
+              documentId: 1f81517f-ec7b-45cf-bab6-c6b6bc245ddd
+              folderId: 731a34c8-67b4-4fa4-ae44-594c9124f322
+              workspaceId: ad9f8f61-fed8-4f2e-a8d4-2c5e3ff3bcf6
+            schema:
+              properties: {}
+              type: object
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: Stream Document Copy
+      tags: []
+  /documents/upload:
+    post:
+      deprecated: false
+      description: ""
+      parameters:
+      - description: ""
+        example: 731a34c8-67b4-4fa4-ae44-594c9124f322
+        explode: true
+        in: query
+        name: workspace_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: ""
+        example: 731a34c8-67b4-4fa4-ae44-594c9124f322
+        explode: true
+        in: query
+        name: folder_id
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          multipart/form-data:
+            example:
+              file1: ""
+              file2: ""
+            schema:
+              $ref: "#/components/schemas/_documents_upload_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                properties: {}
+                type: object
+          description: ""
+      security:
+      - bearer: []
+      summary: 'Upload Document '
+      tags: []
+components:
+  responses: {}
+  schemas:
+    _auth_auth_token_post_request:
+      properties:
+        publicKey:
+          type: string
+        secretKey:
+          type: string
+      required:
+      - publicKey
+      - secretKey
+    _teams_members_add_post_request:
+      properties:
+        team_id:
+          type: string
+      required:
+      - team_id
+    _teams_create_post_request:
+      properties:
+        name:
+          description: name
+          type: string
+        description:
+          nullable: true
+          type: string
+        type:
+          enum:
+          - individual
+          - legal_entity
+          type: string
+      required:
+      - name
+      - type
+    _teams_update_put_request:
+      properties:
+        name:
+          description: name
+          type: string
+        description:
+          description: Team description
+          nullable: true
+          type: string
+        type:
+          description: Type of your team
+          enum:
+          - individual
+          - legal_entity
+          type: string
+        id:
+          type: string
+      required:
+      - id
+      - name
+      - type
+    _teams_delete_delete_request:
+      properties:
+        team_id:
+          description: name
+          type: string
+      required:
+      - team_id
+    _workspaces_create_post_request:
+      properties:
+        name:
+          description: name
+          type: string
+        description:
+          description: Workspace description
+          type: string
+        team_id:
+          description: team Id
+          title: ""
+          type: string
+      required:
+      - description
+      - name
+      - team_id
+    _workspaces_create_post_201_response_result:
+      example:
+        id: 0
+        publicId: publicId
+        name: name
+        isPersonal: true
+        description: description
+        status: status
+        storageLimit: storageLimit
+        storageUsed: storageUsed
+        createdAt: createdAt
+        updatedAt: updatedAt
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        name:
+          type: string
+        isPersonal:
+          type: boolean
+        description:
+          type: string
+        status:
+          type: string
+        storageLimit:
+          type: string
+        storageUsed:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+      required:
+      - createdAt
+      - description
+      - id
+      - isPersonal
+      - name
+      - publicId
+      - status
+      - storageLimit
+      - storageUsed
+      - updatedAt
+    _workspaces_create_post_201_response_meta:
+      example:
+        request_id: request_id
+        status_code: 6
+      properties:
+        request_id:
+          type: string
+        status_code:
+          type: integer
+      required:
+      - request_id
+      - status_code
+    _workspaces_create_post_201_response:
+      example:
+        success: true
+        message: message
+        result:
+          id: 0
+          publicId: publicId
+          name: name
+          isPersonal: true
+          description: description
+          status: status
+          storageLimit: storageLimit
+          storageUsed: storageUsed
+          createdAt: createdAt
+          updatedAt: updatedAt
+        errors: {}
+        except: {}
+        meta:
+          request_id: request_id
+          status_code: 6
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        result:
+          $ref: "#/components/schemas/_workspaces_create_post_201_response_result"
+        errors:
+          type: object
+        except:
+          type: object
+        meta:
+          $ref: "#/components/schemas/_workspaces_create_post_201_response_meta"
+      required:
+      - errors
+      - except
+      - message
+      - meta
+      - result
+      - success
+    _workspaces_details_get_200_response_result_team_teamMembers_inner:
+      example:
+        id: 1
+        publicId: publicId
+        teamId: 5
+        accountId: 5
+        role: role
+        roleId: 2
+        templateId: {}
+        isActive: true
+        joinedAt: joinedAt
+        createdAt: createdAt
+        updatedAt: updatedAt
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        teamId:
+          type: integer
+        accountId:
+          type: integer
+        role:
+          type: string
+        roleId:
+          type: integer
+        templateId:
+          type: object
+        isActive:
+          type: boolean
+        joinedAt:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    _workspaces_details_get_200_response_result_team:
+      example:
+        id: 6
+        publicId: publicId
+        name: name
+        description: description
+        slug: slug
+        color: color
+        isActive: true
+        type: type
+        createdAt: createdAt
+        updatedAt: updatedAt
+        teamMembers:
+        - id: 1
+          publicId: publicId
+          teamId: 5
+          accountId: 5
+          role: role
+          roleId: 2
+          templateId: {}
+          isActive: true
+          joinedAt: joinedAt
+          createdAt: createdAt
+          updatedAt: updatedAt
+        - id: 1
+          publicId: publicId
+          teamId: 5
+          accountId: 5
+          role: role
+          roleId: 2
+          templateId: {}
+          isActive: true
+          joinedAt: joinedAt
+          createdAt: createdAt
+          updatedAt: updatedAt
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        slug:
+          type: string
+        color:
+          type: string
+        isActive:
+          type: boolean
+        type:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        teamMembers:
+          items:
+            $ref: "#/components/schemas/_workspaces_details_get_200_response_result_team_teamMembers_inner"
+          type: array
+          default: null
+      required:
+      - color
+      - createdAt
+      - description
+      - id
+      - isActive
+      - name
+      - publicId
+      - slug
+      - teamMembers
+      - type
+      - updatedAt
+    _workspaces_details_get_200_response_result:
+      example:
+        id: 0
+        publicId: publicId
+        name: name
+        isPersonal: true
+        description: description
+        status: status
+        storageLimit: storageLimit
+        storageUsed: storageUsed
+        createdAt: createdAt
+        updatedAt: updatedAt
+        team:
+          id: 6
+          publicId: publicId
+          name: name
+          description: description
+          slug: slug
+          color: color
+          isActive: true
+          type: type
+          createdAt: createdAt
+          updatedAt: updatedAt
+          teamMembers:
+          - id: 1
+            publicId: publicId
+            teamId: 5
+            accountId: 5
+            role: role
+            roleId: 2
+            templateId: {}
+            isActive: true
+            joinedAt: joinedAt
+            createdAt: createdAt
+            updatedAt: updatedAt
+          - id: 1
+            publicId: publicId
+            teamId: 5
+            accountId: 5
+            role: role
+            roleId: 2
+            templateId: {}
+            isActive: true
+            joinedAt: joinedAt
+            createdAt: createdAt
+            updatedAt: updatedAt
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        name:
+          type: string
+        isPersonal:
+          type: boolean
+        description:
+          type: string
+        status:
+          type: string
+        storageLimit:
+          type: string
+        storageUsed:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        team:
+          $ref: "#/components/schemas/_workspaces_details_get_200_response_result_team"
+      required:
+      - createdAt
+      - description
+      - id
+      - isPersonal
+      - name
+      - publicId
+      - status
+      - storageLimit
+      - storageUsed
+      - team
+      - updatedAt
+    _workspaces_details_get_200_response:
+      example:
+        success: true
+        message: message
+        result:
+          id: 0
+          publicId: publicId
+          name: name
+          isPersonal: true
+          description: description
+          status: status
+          storageLimit: storageLimit
+          storageUsed: storageUsed
+          createdAt: createdAt
+          updatedAt: updatedAt
+          team:
+            id: 6
+            publicId: publicId
+            name: name
+            description: description
+            slug: slug
+            color: color
+            isActive: true
+            type: type
+            createdAt: createdAt
+            updatedAt: updatedAt
+            teamMembers:
+            - id: 1
+              publicId: publicId
+              teamId: 5
+              accountId: 5
+              role: role
+              roleId: 2
+              templateId: {}
+              isActive: true
+              joinedAt: joinedAt
+              createdAt: createdAt
+              updatedAt: updatedAt
+            - id: 1
+              publicId: publicId
+              teamId: 5
+              accountId: 5
+              role: role
+              roleId: 2
+              templateId: {}
+              isActive: true
+              joinedAt: joinedAt
+              createdAt: createdAt
+              updatedAt: updatedAt
+        errors: {}
+        except: {}
+        meta:
+          request_id: request_id
+          status_code: 6
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        result:
+          $ref: "#/components/schemas/_workspaces_details_get_200_response_result"
+        errors:
+          type: object
+        except:
+          type: object
+        meta:
+          $ref: "#/components/schemas/_workspaces_create_post_201_response_meta"
+      required:
+      - errors
+      - except
+      - message
+      - meta
+      - result
+      - success
+    _workspaces_teams_get_200_response_result_inner:
+      example:
+        publicId: publicId
+        teamId: 0
+        name: name
+        isPersonal: true
+        description: description
+        status: status
+        storageLimit: storageLimit
+        storageUsed: storageUsed
+        createdAt: createdAt
+        updatedAt: updatedAt
+        folders:
+        - folders
+        - folders
+      properties:
+        publicId:
+          type: string
+        teamId:
+          type: integer
+        name:
+          type: string
+        isPersonal:
+          type: boolean
+        description:
+          type: string
+        status:
+          type: string
+        storageLimit:
+          type: string
+        storageUsed:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        folders:
+          items:
+            type: string
+          type: array
+          default: null
+    _workspaces_teams_get_200_response:
+      example:
+        success: true
+        message: message
+        result:
+        - publicId: publicId
+          teamId: 0
+          name: name
+          isPersonal: true
+          description: description
+          status: status
+          storageLimit: storageLimit
+          storageUsed: storageUsed
+          createdAt: createdAt
+          updatedAt: updatedAt
+          folders:
+          - folders
+          - folders
+        - publicId: publicId
+          teamId: 0
+          name: name
+          isPersonal: true
+          description: description
+          status: status
+          storageLimit: storageLimit
+          storageUsed: storageUsed
+          createdAt: createdAt
+          updatedAt: updatedAt
+          folders:
+          - folders
+          - folders
+        errors: {}
+        except: {}
+        meta:
+          request_id: request_id
+          status_code: 6
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        result:
+          items:
+            $ref: "#/components/schemas/_workspaces_teams_get_200_response_result_inner"
+          type: array
+          default: null
+        errors:
+          type: object
+        except:
+          type: object
+        meta:
+          $ref: "#/components/schemas/_workspaces_create_post_201_response_meta"
+      required:
+      - errors
+      - except
+      - message
+      - meta
+      - result
+      - success
+    _workspaces_update_put_request:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        status:
+          description: status
+          enum:
+          - active
+          - inactive
+          - suspended
+          type: string
+      required:
+      - description
+      - id
+      - name
+      - status
+    _workspaces_update_put_200_response_result_team_teamMembers_inner:
+      example:
+        id: 1
+        publicId: publicId
+        teamId: 5
+        accountId: 5
+        role: role
+        roleId: 2
+        templateId: {}
+        isActive: true
+        joinedAt: joinedAt
+        createdAt: createdAt
+        updatedAt: updatedAt
+        deletedAt: {}
+        deletedBy: {}
+        deletedReason: {}
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        teamId:
+          type: integer
+        accountId:
+          type: integer
+        role:
+          type: string
+        roleId:
+          type: integer
+        templateId:
+          type: object
+        isActive:
+          type: boolean
+        joinedAt:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        deletedAt:
+          type: object
+        deletedBy:
+          type: object
+        deletedReason:
+          type: object
+    _workspaces_update_put_200_response_result_team:
+      example:
+        id: 6
+        publicId: publicId
+        name: name
+        description: description
+        slug: slug
+        color: color
+        isActive: true
+        type: type
+        createdAt: createdAt
+        updatedAt: updatedAt
+        teamMembers:
+        - id: 1
+          publicId: publicId
+          teamId: 5
+          accountId: 5
+          role: role
+          roleId: 2
+          templateId: {}
+          isActive: true
+          joinedAt: joinedAt
+          createdAt: createdAt
+          updatedAt: updatedAt
+          deletedAt: {}
+          deletedBy: {}
+          deletedReason: {}
+        - id: 1
+          publicId: publicId
+          teamId: 5
+          accountId: 5
+          role: role
+          roleId: 2
+          templateId: {}
+          isActive: true
+          joinedAt: joinedAt
+          createdAt: createdAt
+          updatedAt: updatedAt
+          deletedAt: {}
+          deletedBy: {}
+          deletedReason: {}
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        slug:
+          type: string
+        color:
+          type: string
+        isActive:
+          type: boolean
+        type:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        teamMembers:
+          items:
+            $ref: "#/components/schemas/_workspaces_update_put_200_response_result_team_teamMembers_inner"
+          type: array
+          default: null
+      required:
+      - color
+      - createdAt
+      - description
+      - id
+      - isActive
+      - name
+      - publicId
+      - slug
+      - teamMembers
+      - type
+      - updatedAt
+    _workspaces_update_put_200_response_result:
+      example:
+        id: 0
+        publicId: publicId
+        name: name
+        isPersonal: true
+        description: description
+        status: status
+        storageLimit: storageLimit
+        storageUsed: storageUsed
+        createdAt: createdAt
+        updatedAt: updatedAt
+        team:
+          id: 6
+          publicId: publicId
+          name: name
+          description: description
+          slug: slug
+          color: color
+          isActive: true
+          type: type
+          createdAt: createdAt
+          updatedAt: updatedAt
+          teamMembers:
+          - id: 1
+            publicId: publicId
+            teamId: 5
+            accountId: 5
+            role: role
+            roleId: 2
+            templateId: {}
+            isActive: true
+            joinedAt: joinedAt
+            createdAt: createdAt
+            updatedAt: updatedAt
+            deletedAt: {}
+            deletedBy: {}
+            deletedReason: {}
+          - id: 1
+            publicId: publicId
+            teamId: 5
+            accountId: 5
+            role: role
+            roleId: 2
+            templateId: {}
+            isActive: true
+            joinedAt: joinedAt
+            createdAt: createdAt
+            updatedAt: updatedAt
+            deletedAt: {}
+            deletedBy: {}
+            deletedReason: {}
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        name:
+          type: string
+        isPersonal:
+          type: boolean
+        description:
+          type: string
+        status:
+          type: string
+        storageLimit:
+          type: string
+        storageUsed:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        team:
+          $ref: "#/components/schemas/_workspaces_update_put_200_response_result_team"
+      required:
+      - createdAt
+      - description
+      - id
+      - isPersonal
+      - name
+      - publicId
+      - status
+      - storageLimit
+      - storageUsed
+      - team
+      - updatedAt
+    _workspaces_update_put_200_response:
+      example:
+        success: true
+        message: message
+        result:
+          id: 0
+          publicId: publicId
+          name: name
+          isPersonal: true
+          description: description
+          status: status
+          storageLimit: storageLimit
+          storageUsed: storageUsed
+          createdAt: createdAt
+          updatedAt: updatedAt
+          team:
+            id: 6
+            publicId: publicId
+            name: name
+            description: description
+            slug: slug
+            color: color
+            isActive: true
+            type: type
+            createdAt: createdAt
+            updatedAt: updatedAt
+            teamMembers:
+            - id: 1
+              publicId: publicId
+              teamId: 5
+              accountId: 5
+              role: role
+              roleId: 2
+              templateId: {}
+              isActive: true
+              joinedAt: joinedAt
+              createdAt: createdAt
+              updatedAt: updatedAt
+              deletedAt: {}
+              deletedBy: {}
+              deletedReason: {}
+            - id: 1
+              publicId: publicId
+              teamId: 5
+              accountId: 5
+              role: role
+              roleId: 2
+              templateId: {}
+              isActive: true
+              joinedAt: joinedAt
+              createdAt: createdAt
+              updatedAt: updatedAt
+              deletedAt: {}
+              deletedBy: {}
+              deletedReason: {}
+        errors: {}
+        except: {}
+        meta:
+          request_id: request_id
+          status_code: 6
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        result:
+          $ref: "#/components/schemas/_workspaces_update_put_200_response_result"
+        errors:
+          type: object
+        except:
+          type: object
+        meta:
+          $ref: "#/components/schemas/_workspaces_create_post_201_response_meta"
+      required:
+      - errors
+      - except
+      - message
+      - meta
+      - result
+      - success
+    _workspaces_delete_delete_request:
+      properties:
+        workspace_id:
+          type: string
+      required:
+      - workspace_id
+    _folders_get_200_response_result_inner:
+      example:
+        publicId: publicId
+        workspaceId: 0
+        parentId: {}
+        createdBy: 6
+        name: name
+        description: description
+        path: path
+        deletedAt: {}
+        deletedBy: {}
+        createdAt: createdAt
+        updatedAt: updatedAt
+        parent: {}
+        children:
+        - children
+        - children
+      properties:
+        publicId:
+          type: string
+        workspaceId:
+          type: integer
+        parentId:
+          type: object
+        createdBy:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        path:
+          type: string
+        deletedAt:
+          type: object
+        deletedBy:
+          type: object
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        parent:
+          type: object
+        children:
+          items:
+            type: string
+          type: array
+          default: null
+    _folders_get_200_response:
+      example:
+        success: true
+        message: message
+        result:
+        - publicId: publicId
+          workspaceId: 0
+          parentId: {}
+          createdBy: 6
+          name: name
+          description: description
+          path: path
+          deletedAt: {}
+          deletedBy: {}
+          createdAt: createdAt
+          updatedAt: updatedAt
+          parent: {}
+          children:
+          - children
+          - children
+        - publicId: publicId
+          workspaceId: 0
+          parentId: {}
+          createdBy: 6
+          name: name
+          description: description
+          path: path
+          deletedAt: {}
+          deletedBy: {}
+          createdAt: createdAt
+          updatedAt: updatedAt
+          parent: {}
+          children:
+          - children
+          - children
+        errors: {}
+        except: {}
+        meta:
+          request_id: request_id
+          status_code: 6
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        result:
+          items:
+            $ref: "#/components/schemas/_folders_get_200_response_result_inner"
+          type: array
+          default: null
+        errors:
+          type: object
+        except:
+          type: object
+        meta:
+          $ref: "#/components/schemas/_workspaces_create_post_201_response_meta"
+      required:
+      - errors
+      - except
+      - message
+      - meta
+      - result
+      - success
+    _folders_create_post_request:
+      properties:
+        workspaceId:
+          type: string
+        name:
+          description: name
+          type: string
+        description:
+          nullable: true
+          type: string
+        parentFolderId:
+          nullable: true
+          type: string
+      required:
+      - name
+      - workspaceId
+    _folders_create_post_201_response_result:
+      example:
+        id: 0
+        publicId: publicId
+        parentId: {}
+        name: name
+        description: description
+        path: path
+        deletedAt: {}
+        deletedBy: {}
+        createdAt: createdAt
+        updatedAt: updatedAt
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        parentId:
+          type: object
+        name:
+          type: string
+        description:
+          type: string
+        path:
+          type: string
+        deletedAt:
+          type: object
+        deletedBy:
+          type: object
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+      required:
+      - createdAt
+      - deletedAt
+      - deletedBy
+      - description
+      - id
+      - name
+      - parentId
+      - path
+      - publicId
+      - updatedAt
+    _folders_create_post_201_response:
+      example:
+        success: true
+        message: message
+        result:
+          id: 0
+          publicId: publicId
+          parentId: {}
+          name: name
+          description: description
+          path: path
+          deletedAt: {}
+          deletedBy: {}
+          createdAt: createdAt
+          updatedAt: updatedAt
+        errors: {}
+        except: {}
+        meta:
+          request_id: request_id
+          status_code: 6
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        result:
+          $ref: "#/components/schemas/_folders_create_post_201_response_result"
+        errors:
+          type: object
+        except:
+          type: object
+        meta:
+          $ref: "#/components/schemas/_workspaces_create_post_201_response_meta"
+      required:
+      - errors
+      - except
+      - message
+      - meta
+      - result
+      - success
+    _folders_details_get_200_response_result_workspace_team:
+      example:
+        id: 1
+        publicId: publicId
+        name: name
+        description: description
+        slug: slug
+        color: color
+        isActive: true
+        type: type
+        createdAt: createdAt
+        updatedAt: updatedAt
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        slug:
+          type: string
+        color:
+          type: string
+        isActive:
+          type: boolean
+        type:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+      required:
+      - color
+      - createdAt
+      - description
+      - id
+      - isActive
+      - name
+      - publicId
+      - slug
+      - type
+      - updatedAt
+    _folders_details_get_200_response_result_workspace:
+      example:
+        id: 6
+        publicId: publicId
+        name: name
+        isPersonal: true
+        description: description
+        status: status
+        storageLimit: storageLimit
+        storageUsed: storageUsed
+        createdAt: createdAt
+        updatedAt: updatedAt
+        team:
+          id: 1
+          publicId: publicId
+          name: name
+          description: description
+          slug: slug
+          color: color
+          isActive: true
+          type: type
+          createdAt: createdAt
+          updatedAt: updatedAt
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        name:
+          type: string
+        isPersonal:
+          type: boolean
+        description:
+          type: string
+        status:
+          type: string
+        storageLimit:
+          type: string
+        storageUsed:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        team:
+          $ref: "#/components/schemas/_folders_details_get_200_response_result_workspace_team"
+      required:
+      - createdAt
+      - description
+      - id
+      - isPersonal
+      - name
+      - publicId
+      - status
+      - storageLimit
+      - storageUsed
+      - team
+      - updatedAt
+    _folders_details_get_200_response_result:
+      example:
+        id: 0
+        publicId: publicId
+        parentId: {}
+        name: name
+        description: description
+        path: path
+        deletedAt: {}
+        deletedBy: {}
+        createdAt: createdAt
+        updatedAt: updatedAt
+        workspace:
+          id: 6
+          publicId: publicId
+          name: name
+          isPersonal: true
+          description: description
+          status: status
+          storageLimit: storageLimit
+          storageUsed: storageUsed
+          createdAt: createdAt
+          updatedAt: updatedAt
+          team:
+            id: 1
+            publicId: publicId
+            name: name
+            description: description
+            slug: slug
+            color: color
+            isActive: true
+            type: type
+            createdAt: createdAt
+            updatedAt: updatedAt
+        parent: {}
+      properties:
+        id:
+          type: integer
+        publicId:
+          type: string
+        parentId:
+          type: object
+        name:
+          type: string
+        description:
+          type: string
+        path:
+          type: string
+        deletedAt:
+          type: object
+        deletedBy:
+          type: object
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        workspace:
+          $ref: "#/components/schemas/_folders_details_get_200_response_result_workspace"
+        parent:
+          type: object
+      required:
+      - createdAt
+      - deletedAt
+      - deletedBy
+      - description
+      - id
+      - name
+      - parent
+      - parentId
+      - path
+      - publicId
+      - updatedAt
+      - workspace
+    _folders_details_get_200_response:
+      example:
+        success: true
+        message: message
+        result:
+          id: 0
+          publicId: publicId
+          parentId: {}
+          name: name
+          description: description
+          path: path
+          deletedAt: {}
+          deletedBy: {}
+          createdAt: createdAt
+          updatedAt: updatedAt
+          workspace:
+            id: 6
+            publicId: publicId
+            name: name
+            isPersonal: true
+            description: description
+            status: status
+            storageLimit: storageLimit
+            storageUsed: storageUsed
+            createdAt: createdAt
+            updatedAt: updatedAt
+            team:
+              id: 1
+              publicId: publicId
+              name: name
+              description: description
+              slug: slug
+              color: color
+              isActive: true
+              type: type
+              createdAt: createdAt
+              updatedAt: updatedAt
+          parent: {}
+        errors: {}
+        except: {}
+        meta:
+          request_id: request_id
+          status_code: 6
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        result:
+          $ref: "#/components/schemas/_folders_details_get_200_response_result"
+        errors:
+          type: object
+        except:
+          type: object
+        meta:
+          $ref: "#/components/schemas/_workspaces_create_post_201_response_meta"
+      required:
+      - errors
+      - except
+      - message
+      - meta
+      - result
+      - success
+    _folders_content_get_200_response_result:
+      example:
+        folders:
+        - folders
+        - folders
+        documents:
+        - documents
+        - documents
+      properties:
+        folders:
+          items:
+            type: string
+          type: array
+          default: null
+        documents:
+          items:
+            type: string
+          type: array
+          default: null
+      required:
+      - documents
+      - folders
+    _folders_content_get_200_response:
+      example:
+        success: true
+        message: message
+        result:
+          folders:
+          - folders
+          - folders
+          documents:
+          - documents
+          - documents
+        errors: {}
+        except: {}
+        meta:
+          request_id: request_id
+          status_code: 6
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        result:
+          $ref: "#/components/schemas/_folders_content_get_200_response_result"
+        errors:
+          type: object
+        except:
+          type: object
+        meta:
+          $ref: "#/components/schemas/_workspaces_create_post_201_response_meta"
+      required:
+      - errors
+      - except
+      - message
+      - meta
+      - result
+      - success
+    _folders_update_put_request:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+      required:
+      - description
+      - id
+      - name
+    _folders_delete_delete_request:
+      properties:
+        id:
+          type: string
+      required:
+      - id
+    _documents_update_put_request:
+      properties:
+        id:
+          description: ID
+          type: string
+        name:
+          description: name
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+        folderId:
+          nullable: true
+          type: string
+      required:
+      - id
+    _documents_delete_delete_request:
+      properties:
+        id:
+          description: ID
+          type: string
+      required:
+      - id
+    _documents_archive_post_request:
+      properties:
+        documentId:
+          description: ID
+          type: string
+        reason:
+          nullable: true
+          type: string
+      required:
+      - documentId
+    _documents_restore_post_request:
+      properties:
+        documentId:
+          description: ID
+          type: string
+      required:
+      - documentId
+    _documents_move_post_request:
+      properties:
+        documentId:
+          description: ID
+          type: string
+        folderId:
+          nullable: true
+          type: string
+        workspaceId:
+          type: string
+      required:
+      - documentId
+      - workspaceId
+    _documents_upload_post_request:
+      properties:
+        file1:
+          example: ""
+          format: binary
+          type: string
+        file2:
+          example: ""
+          format: binary
+          type: string
+  securitySchemes:
+    bearer:
+      scheme: bearer
+      type: http
