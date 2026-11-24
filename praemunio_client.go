@@ -21,6 +21,12 @@ type PraemunioClient struct {
 	AccessToken  string
 	RefreshToken string
 	HTTPClient   *http.Client
+	apiClient    *PraemunioAPIClient
+	workspaces   *WorkspacesAPI
+	teams        *TeamsAPI
+	teamsMembers *TeamsMembersAPI
+	folders      *FoldersAPI
+	documents    *DocumentsAPI
 }
 
 // NewPraemunioClient creates a new client pointing to the sandbox environment.
@@ -111,12 +117,54 @@ func (c *PraemunioClient) GetRefreshToken() string {
 }
 
 // CreateAPI creates a new API client configured with the current access token.
-func (c *PraemunioClient) CreateAPI() *APIClient {
-	return &APIClient{
-		BaseURL:     c.BaseURL,
-		AccessToken: c.AccessToken,
-		HTTPClient:  c.HTTPClient,
+func (c *PraemunioClient) CreateAPI() *PraemunioAPIClient {
+	if c.apiClient == nil {
+		cfg := NewConfiguration()
+		cfg.Servers = ServerConfigurations{{URL: c.BaseURL}}
+		cfg.HTTPClient = c.HTTPClient
+		c.apiClient = &PraemunioAPIClient{APIClient: NewAPIClient(cfg)}
 	}
+	return c.apiClient
+}
+
+// Workspaces returns the Workspaces API.
+func (c *PraemunioClient) Workspaces() *WorkspacesAPI {
+	if c.workspaces == nil {
+		c.workspaces = NewWorkspacesAPI(c.CreateAPI())
+	}
+	return c.workspaces
+}
+
+// Teams returns the Teams API.
+func (c *PraemunioClient) Teams() *TeamsAPI {
+	if c.teams == nil {
+		c.teams = NewTeamsAPI(c.CreateAPI())
+	}
+	return c.teams
+}
+
+// TeamsMembers returns the Teams Members API.
+func (c *PraemunioClient) TeamsMembers() *TeamsMembersAPI {
+	if c.teamsMembers == nil {
+		c.teamsMembers = NewTeamsMembersAPI(c.CreateAPI())
+	}
+	return c.teamsMembers
+}
+
+// Folders returns the Folders API.
+func (c *PraemunioClient) Folders() *FoldersAPI {
+	if c.folders == nil {
+		c.folders = NewFoldersAPI(c.CreateAPI())
+	}
+	return c.folders
+}
+
+// Documents returns the Documents API.
+func (c *PraemunioClient) Documents() *DocumentsAPI {
+	if c.documents == nil {
+		c.documents = NewDocumentsAPI(c.CreateAPI())
+	}
+	return c.documents
 }
 
 // APIClient is a low-level API client that sends authenticated requests.
